@@ -14,10 +14,9 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = Number(this.router.url.split('/').pop());
-    if(this.id > 1) {
-      this.userName = 'User' + this.id
+    if (this.id > 1) {
+      this.userName = 'User' + this.id;
     }
-     
   }
 
   addWin() {
