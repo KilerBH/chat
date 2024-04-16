@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-header>
+      <div class="header">
+        <div class="about-user">
+          <img
+            mat-card-avatar
+            style="background-color: #ccc; height: 50px; width: 50px"
+          />
+          <h2>{{ userName }}</h2>
+        </div>
+        <button mat-mini-fab style="top: -5px;" title="Добавить новую вкладку" (click)="addWin()">
+          <mat-icon>add</mat-icon>
+          <a routerLink="/user/{{1}}">
+            
+          </a>
+        </button>
+      </div>
+    </mat-card-header>
+    <div class="content">
+      <mat-card-content fxFlex="1 1 auto">
+        <app-chat [user]="userName"></app-chat>
+      </mat-card-content>
+    </div>
+  </mat-card>
+  

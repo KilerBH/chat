@@ -1,0 +1,32 @@
+<mat-card class="chat">
+  <mat-card class="chat-field">
+    <div *ngFor="let data of messages$ | async">
+      <div class="message">
+        {{ data.fromUser }}:<span
+          class="message-value"
+          [ngStyle]="
+            data.fromUser === _user
+              ? { background: '#3f51b573' }
+              : { background: 'azure' }
+          "
+          >{{ data.value }}</span
+        >
+      </div>
+    </div>
+  </mat-card>
+  <div *ngIf="isWriting" style="color: #999">
+    {{ message.fromUser + " печатает..." }}
+  </div>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <textarea
+        [formControl]="text"
+        matInput
+        placeholder="введите сообщение"
+      ></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onSend()">
+      Отправить
+    </button>
+  </form>
+</mat-card>
